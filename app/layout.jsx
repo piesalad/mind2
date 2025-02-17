@@ -15,7 +15,7 @@ const navbar = (
         // ... Your additional navbar options
     />
 )
-const footer = <Footer> Mind 2 and Jolla is a Trademark of Jollyboys Oy, Venho Ai is a Trademark of Venho Ai Oy - {new Date().getFullYear()} © tfinn</Footer>
+const footer = <Footer> All trademarks are property of their respective owners - {new Date().getFullYear()} © tfinn</Footer>
 
 export default async function RootLayout({ children }) {
     return (

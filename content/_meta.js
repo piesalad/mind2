@@ -1,4 +1,5 @@
 export default {
     index: 'Introduction',
-    gettingStarted: 'Getting started'
+    gettingStarted: 'Getting started',
+    verifiedPowerSupplies: 'Verified Power Supplies'
 }
