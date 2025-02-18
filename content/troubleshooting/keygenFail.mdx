@@ -3,14 +3,14 @@ title: KEYGEN_FAIL
 ---
 # If this error occurs the Services where not properly started.
 
-## To fix this:
+## How to fix this
 >[!NOTE]
 >
 >To fix this you will need Root access on the Jolla Mind 2, if you don`t have it enabeld follow the steps in enable [Developer mode](/developer/enableDevMode)
 
 SSH into the Jolla Mind 2 or open the Terminal on the Jolla Mind 2.<br />
 
-Switch to the root account:
+Switch to the root user:
 ```bash copy
 devel-su
 ```
@@ -19,26 +19,26 @@ In the Terminal switch to the venho-ada-env environment:
 ```bash copy
 venho-ada-env
 ```
-then stop the venho-ada service:
+Then stop the venho-ada service:
 ```bash copy
 systemctl stop venho-ada.service
 ```
-also stop the containers after this with:
+Also stop the containers after this with:
 ```bash copy
 nerdctl compose down
 ```
 
-after running all the commands above start the venho-ada service again:
+After running all the commands above start the venho-ada service again:
 ```bash copy
 systemctl start venho-ada.service
 ```
 
-Now all you have to do is wait, until all Containers are running again and the KEYGEN_FAIL should be gone when logging in.
+Now all you have to do is wait, until all containers are running again and the KEYGEN_FAIL should be gone when logging in.
 
 >[!TIP]
 >
 >You can check if all containers are running with
 >```bash copy
->nerdctl compose ps -a
+>nerdctl ps
 >```
 
