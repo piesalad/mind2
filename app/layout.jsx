@@ -49,6 +49,7 @@ export default async function RootLayout({children}) {
         <Layout
             //banner={banner}
             navbar={navbar}
+            banner={banner}
             pageMap={await getPageMap()}
             docsRepositoryBase="https://github.com/tfinn345/mind2"
             footer={footer}
