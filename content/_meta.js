@@ -5,9 +5,17 @@ export default {
     '###': {
         type: 'separator'
     },
-    developer: 'Developer',
+    developer: {
+        title: 'Developer',
+        theme: {
+            "collapsed": true
+        }
+    },
     troubleshooting: {
-        title: 'Troubleshooting'
+        title: 'Troubleshooting',
+        theme: {
+            "collapsed": true
+        }
     },
     '####': {
         type: 'separator'
