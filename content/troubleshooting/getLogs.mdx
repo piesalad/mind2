@@ -1,0 +1,35 @@
+---
+title: Get the logs from Containers
+---
+## See logs for each container
+Containers directly associated with the Venho app are usually found within the `venho.ai/venho-ada/` image location, although the application might use other containers running as well.
+At the time of writing this, the known containers for Venho applications are:
+
+- gateway
+- opaque
+- keygen
+- quadstore
+- qdrant
+- redis
+- ipfs
+- llm
+- pytorch-transformers
+- mailbox-provider
+- storage
+- ollama
+- processor
+- venho-ada-frontend-httpd-1
+
+In order to see the logs nerdctl can be used running the following command:
+
+```bash copy
+# Switch to root
+devel-su
+# Switch to venho-ada-env enviorment
+venho-ada-env
+
+# See logs for all containers:
+nerdctl compose logs -f
+# See logs for a specific container (e.g., processor):
+nerdctl compose logs -f processor
+```

@@ -1,5 +1,8 @@
 export default {
     index: 'Introduction',
     gettingStarted: 'Getting started',
-    verifiedPowerSupplies: 'Verified Power Supplies'
+    verifiedPowerSupplies: 'Verified Power Supplies',
+    troubleshooting: {
+        title: 'Troubleshooting'
+    }
 }
