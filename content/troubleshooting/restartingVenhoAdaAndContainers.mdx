@@ -1,35 +1,26 @@
 ---
 title: Restarting venho-ada.service and all containers
 ---
-If you want to restart everything because you run in to some Trouble, you could either shut down the Jolla Mind 2 or restart venho-ada.service and all containers without needing to turn off the Jolla Mind 2.
+If you want to restart everything, you could either shut down the Jolla Mind 2 or restart venho-ada.service and all containers without needing to turn off the Jolla Mind 2.
 
-## How to restart the venho-ada.service and all containers
 >[!NOTE]
 >
 >To do this you will need root access on the Jolla Mind 2, if you don`t have it enabled follow the steps in enable [Developer mode](/developer/enableDevMode)
 
-SSH into the Jolla Mind 2 or open the Terminal on the Jolla Mind 2.<br />
-
-Switch to the root user:
+SSH into the Jolla Mind 2 or open the Terminal on the Jolla Mind 2. Then run the following commands:
 ```bash copy
+# Switch to the root user:
 devel-su
-```
-
-In the Terminal switch to the venho-ada-env environment:
-```bash copy
+# Switch to the venho-ada-env environment:
 venho-ada-env
-```
-Then stop the venho-ada service:
-```bash copy
-systemctl stop venho-ada.service
-```
-Also stop the containers after this with:
-```bash copy
-nerdctl compose down
-```
 
-After running all the commands above start the venho-ada service again:
-```bash copy
+# Stop the venho-ada service:
+systemctl stop venho-ada.service
+
+# Stop all the containers:
+nerdctl compose down
+
+# Start the venho-ada service again wich will then also start the containers:
 systemctl start venho-ada.service
 ```
 
