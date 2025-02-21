@@ -1,0 +1,49 @@
+---
+title: Update the Jolla Mind 2 manually
+---
+# Manually updating the Jolla Mind 2
+>[!IMPORTANT]
+>
+> You will have to look in the community channels (Discord / Sailfisch OS Forum) for the latest RELEASE_TAG, as you will need it below.
+
+>[!NOTE]
+>
+>To do this you will need root access on the Jolla Mind 2, if you don`t have it enabled follow the steps in enable [Developer mode](/developer/enableDevMode)!
+
+Open either the Terminal on the Jolla Mind2 or an ssh session and run the commands below.
+```bash copy
+#Switch to the root user
+devel-su
+#Enter the venho-ada-env environment
+venho-ada-env
+#Stop the venho-ada.service
+systemctl stop venho-ada.service
+#Stop the containers
+nerdctl compose down
+```
+Exiting the venho-ada-env is now needed, as you now will declare the new RELEASE_TAG env Variable.
+```bash copy
+#Exit the venho-ada-env
+exit
+#Declaring the new RELEASE_TAG
+echo "RELEASE_TAG=X.X.X" > /var/lib/venho-ada/local.env
+```
+Now you will need to enter the venho-ada-env environment again, update the container images from the registry and restart the venho-ada.service.
+```bash copy
+#Enter the Venho-ada-env environment
+venho-ada-env
+#Pull the new Images from the registry
+nerdctl compose pull
+#Start the venho-ada.service again
+systemctl start venho-ada.service
+```
+You will now need to check if all containers have the status running.
+```bash copy
+#Check if all containers are running
+nerdctl copmose ps -a
+```
+If all containers are running with the new images, you now must prune the old images.
+```bash copy
+#Remove old images
+nerdctl image prune -af
+```

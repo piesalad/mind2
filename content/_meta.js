@@ -1,6 +1,7 @@
 export default {
     index: 'Introduction',
     gettingStarted: 'Getting started',
+    manuallyUpdate: 'Manually update',
     verifiedPowerSupplies: 'Verified Power Supplies',
     '###': {
         type: 'separator'
