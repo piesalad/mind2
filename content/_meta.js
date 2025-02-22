@@ -18,6 +18,7 @@ export default {
             "collapsed": true
         }
     },
+    teardown: 'Teardown pictures',
     '####': {
         type: 'separator'
     },
