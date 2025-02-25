@@ -6,6 +6,12 @@ export default {
     '###': {
         type: 'separator'
     },
+    guides: {
+        title: 'Guides',
+        theme: {
+            "collapsed": true
+        }
+    },
     developer: {
         title: 'Developer',
         theme: {
