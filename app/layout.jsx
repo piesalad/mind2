@@ -28,7 +28,7 @@ const navbar = (
         // ... Your additional navbar options
     />
 )
-const footer = <Footer> All trademarks are property of their respective owners - {new Date().getFullYear()} © piesalad</Footer>
+const footer = <Footer> All trademarks are property of their respective owners - {new Date().getFullYear()} © piesalad | I'm not responsible if you brick/break your device</Footer>
 
 export default async function RootLayout({children}) {
     return (
