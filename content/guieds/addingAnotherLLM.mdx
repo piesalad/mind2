@@ -1,0 +1,9 @@
+---
+title: Add another LLM Model
+---
+# Adding another LLM Model
+```bash copy
+nerdctl exec -it ollama ollama pull some-model
+
+nerdctl compose restart llm-router
+```
