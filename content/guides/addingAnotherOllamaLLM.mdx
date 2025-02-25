@@ -17,13 +17,8 @@ If you want to add another Ollama LLM model, you can simply search for one on th
 devel-su
 #Switch to the venho-ada-env Environment
 venho-ada-env
-```
-
-Then all you will have to do is replace ```'name of the model'``` with the modell you want in the command below.
-```bash copy
+#Replace 'name of the model' with the modell you want
 nerdctl exec -it ollama ollama pull 'name of the model'
-```
-After that all you will have to do for it to show up in the web GUI is to restart the llm-router.
-```bash copy
+#For it to show up in the web GUI is to restart the llm-router.
 nerdctl compose restart llm-router
 ```
