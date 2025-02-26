@@ -31,6 +31,10 @@ pip install -r requirements.txt
 >pip install dotenv
 >pip install requests
 >```
+```bash copy
+chmod +x setup.sh
+./setup.sh --no-conda
+```
 
 set CPU to rk3588 in serve.sh
 ```bash filename="serve.sh"
@@ -45,3 +49,28 @@ replace ```{"--no-conda" if use_no_conda else ""}``` with ```--no-conda``` in se
 ```python filename="client.py"
 357 os.system(f"bash ~/RKLLAMA/server.sh {"--no-conda" if use_no_conda else ""} --port={PORT}")
 ```
+
+## Run a Model from a self converted Model file or pull it from Hugging Face
+```
+#Switch to where it is installed
+cd /root/rkllama
+chmod +x client.sh
+./client.sh --no-conda
+```
+self converted Model
+Just add it to the /root/RKLLAMA/models folder
+
+Hugging Face download a model
+```bash copy
+./client.sh --no-conda serve
+#open new terminal or coninue running it in the Background
+./client --no-conda pull
+#Follow the steps in the Terminal there and enter the Repo Path then the model filename
+```
+
+```bash copy
+./client run 'MODELNAME'
+```
+
+## Soruce
+https://github.com/NotPunchnox/rkllama/
