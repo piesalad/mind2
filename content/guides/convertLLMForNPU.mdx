@@ -1,0 +1,53 @@
+---
+title: Convert an LLM for the RK3588 NPU
+---
+# Converting an LLM for the Jolla Mind 2 RK3588 NPU
+
+## Setting everything up
+>[!NOTE]
+>
+>To do this, you will need an x86 PC and Python 3.8 & pip
+
+I will be using Ubuntu LTS 20.04 for the following commands, you will have to adapt some of them for your distro if you use another one.
+
+Install the RKLLM-Toolkit Software:
+```bash copy
+git clone -b release-v1.1.4 https://github.com/airockchip/rknn-llm.git
+pip3 install ./rknn-llm/rkllm-toolkit/packages/rkllm_toolkit-1.1.4-cp38-cp38-linux_x86_64.whl
+```
+
+If the following command runs without any errors, the installation was successful:
+```bash copy
+python3
+from rkllm.api import RKLLM
+```
+## Pulling the LLM you want and converting it for the RK3588 NPU
+
+Make sure that you have git lfs installed:
+```bash copy
+sudo apt install git-lfs
+```
+
+You can pull the model you want from Hugging Face:
+```bash copy
+git clone https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+```
+
+Modify the ```modelpath```, ```dataset``` path, and ```RKLLM export path``` in ```rknn-llm/rkllm-toolkit/examples/test.py```:
+```python filename="test.py"
+15 modelpath = 'Your DeepSeek-R1-Distill-Qwen-1.5B Folder Path'
+29 dataset = None # Default is "./data_quant.json". If not available, set to None.
+83 ret = llm.export_rkllm("./DeepSeek-R1-Distill-Qwen-1.5B.rkllm")
+```
+
+Run the model conversion script:
+```bash copy
+cd rknn-llm/rkllm-toolkit/examples/
+python3 test.py
+```
+After successful conversion, the ```DeepSeek-R1-Distill-Qwen-1.5B.rkllm``` model will be generated.
+
+## Sources
+https://docs.radxa.com/en/rock5/rock5b/app-development/rkllm_deepseek_r1 <br />
+https://docs.radxa.com/en/rock5/rock5b/app-development/rkllm_install<br />
+https://github.com/airockchip/rknn-llm
