@@ -33,7 +33,7 @@ git clone https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
 ```
 
 Modify the ```modelpath```, ```dataset``` path, and ```RKLLM export path``` in ```rknn-llm/rkllm-toolkit/examples/test.py```:
-```bash
+```python filename="test.py"
 15 modelpath = 'Your DeepSeek-R1-Distill-Qwen-1.5B Folder Path'
 29 dataset = None # Default is "./data_quant.json". If not available, set to None.
 83 ret = llm.export_rkllm("./DeepSeek-R1-Distill-Qwen-1.5B.rkllm")

@@ -1,0 +1,47 @@
+---
+title: 🚧(WIP)🚧 Running an LLM on the NPU
+---
+>[!CAUTION]
+>
+>🚧Work in Progress🚧<br />
+>You could run in to some Problems.<br />
+Be aware of what you do and its consequences.
+# 🚧(Work in Progress)🚧 Running an .rkllm model on the NPU
+Needed Packages:
+```bash copy
+pkcon install git
+pkcon install pip
+pkcon install libgomp
+```
+
+Gitrepo with an Ollama compatible server:
+```basch copy
+git clone https://github.com/notpunchnox/rkllama
+```
+```bash copy
+cd rkllama
+```
+```bash copy
+pip install -r requirements.txt
+```
+>```bahs copy
+>pip intall transformers
+>pip install flask
+>pip install huggingface_hub
+>pip install dotenv
+>pip install requests
+>```
+
+set CPU to rk3588 in serve.sh
+```bash filename="serve.sh"
+8 CPU_MODEL="" #Change to CPU_MODEL="rk3588"
+9 PORT=8080 #Change to something that's not 8080 like 8084
+```
+
+replace ```{"--no-conda" if use_no_conda else ""}``` with ```--no-conda``` in serve.py
+```python filename="client.py"
+357 os.system(f"bash ~/RKLLAMA/server.sh {"--no-conda" if use_no_conda else ""} --port={PORT}")
+```
+```python filename="client.py"
+357 os.system(f"bash ~/RKLLAMA/server.sh {"--no-conda" if use_no_conda else ""} --port={PORT}")
+```
