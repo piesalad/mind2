@@ -1,0 +1,32 @@
+airockchip
+deepseek
+iFixit
+ipfs
+isy
+iwc
+Inbox
+Jolla
+Jolla Mind
+llm
+lfs
+libgomp
+modelpath
+nerdctl
+Nextra
+NPU
+oled
+Ollama
+piesalad
+pkcon
+pytorch
+qdrant
+quadstore
+Qwen
+radxa
+rkllama
+rkllm
+rknn
+Sailfish
+Venho
+Venho.ai
+Media Markt

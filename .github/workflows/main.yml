@@ -27,3 +27,7 @@ jobs:
             cspell:npm/dict/npm.txt
             cspell:php/dict/php.txt
             cspell:python/src/python/python-lib.txt
+            cspell:mnemonics/src/mnemonics.txt
+            cspell:css/dict/css.txt
+            cspell:typescript/dict/typescript.txt
+          ignore-pattern: "(https?://[^\s]+)"

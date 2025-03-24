@@ -15,8 +15,8 @@ pkcon install pip
 pkcon install libgomp
 ```
 
-Gitrepo with an Ollama compatible server:
-```basch copy
+git repo with an Ollama compatible server:
+```bash copy
 git clone https://github.com/notpunchnox/rkllama
 ```
 ```bash copy
@@ -25,8 +25,8 @@ cd rkllama
 ```bash copy
 pip install -r requirements.txt
 ```
->```bahs copy
->pip intall transformers
+>```bash copy
+>pip install transformers
 >pip install flask
 >pip install huggingface_hub
 >pip install dotenv
@@ -64,14 +64,14 @@ Just add it to the /root/RKLLAMA/models folder
 Hugging Face download a model
 ```bash copy
 ./client.sh --no-conda serve
-#open new terminal or coninue running it in the Background
+#open new terminal or continue running it in the Background
 ./client --no-conda pull
 #Follow the steps in the Terminal there and enter the Repo Path then the model filename
 ```
 
 ```bash copy
-./client run 'MODELNAME'
+./client run 'model'
 ```
 
-## Soruce
+## Source
 https://github.com/NotPunchnox/rkllama/

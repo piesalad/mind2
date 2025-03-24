@@ -33,7 +33,7 @@ You can pull the model you want from Hugging Face:
 git clone https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
 ```
 
-Modify the ```modelpath```, ```dataset``` path, and ```RKLLM export path``` in ```rknn-llm/rkllm-toolkit/examples/test.py```:
+Modify the `modelpath`, `dataset` path, and `RKLLM export path` in `rknn-llm/rkllm-toolkit/examples/test.py`:
 ```python filename="test.py"
 15 modelpath = 'Your DeepSeek-R1-Distill-Qwen-1.5B Folder Path'
 29 dataset = None # Default is "./data_quant.json". If not available, set to None.
@@ -45,7 +45,7 @@ Run the model conversion script:
 cd rknn-llm/rkllm-toolkit/examples/
 python3 test.py
 ```
-After successful conversion, the ```DeepSeek-R1-Distill-Qwen-1.5B.rkllm``` model will be generated.
+After successful conversion, the `DeepSeek-R1-Distill-Qwen-1.5B.rkllm` model will be generated.
 
 ## Sources
 https://docs.radxa.com/en/rock5/rock5b/app-development/rkllm_deepseek_r1 <br />

@@ -7,7 +7,7 @@ title: Add another Ollama LLM model
 >
 >This is not recommended as it will not work with some things, like chat with memory.
 
-If you want to add another Ollama LLM model, you can simply search for one on the [Ollama Website](https://ollama.com/search).
+If you want to add another Ollama LLM model, you can simply search for one on the [Ollama website](https://ollama.com/search).
 >[!NOTE]
 >
 >To do this you will need root access on the Jolla Mind 2, if you don't have it enabled follow the steps in enable [Developer mode](/developer/enableDevMode)
@@ -17,7 +17,7 @@ If you want to add another Ollama LLM model, you can simply search for one on th
 devel-su
 #Switch to the venho-ada-env Environment
 venho-ada-env
-#Replace 'name of the model' with the modell you want
+#Replace 'name of the model' with the model you want
 nerdctl exec -it ollama ollama pull 'name of the model'
 #For it to show up in the web GUI is to restart the llm-router.
 nerdctl compose restart llm-router
