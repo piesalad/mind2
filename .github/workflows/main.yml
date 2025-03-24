@@ -1,33 +1,23 @@
-name: Spell Check
+name: Check Spelling
 
 on:
   push:
     branches:
       - main
   pull_request:
-  
-permissions:
-  contents: write
-  
-jobs:
-  spell-check:
-    runs-on: ubuntu-latest
+    branches:
+      - main
 
+jobs:
+  check-typos:
+    name: Check Spelling
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Spell Check
-        uses: check-spelling/check-spelling@v0.0.24
+      - name: Run typos check
+        uses: crate-ci/typos@v1.16.24
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          extra_dictionaries: |
-            cspell:software-terms/dict/softwareTerms.txt
-            cspell:node/dict/node.txt
-            cspell:npm/dict/npm.txt
-            cspell:php/dict/php.txt
-            cspell:python/src/python/python-lib.txt
-            cspell:mnemonics/src/mnemonics.txt
-            cspell:css/dict/css.txt
-            cspell:typescript/dict/typescript.txt
-          ignore-pattern: "(https?://[^\\s]+)"
+          config: ./.github/workflows/typos-config.toml
+          write_changes: false 
