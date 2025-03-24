@@ -1,1 +1,1 @@
-^\Qpackage.json\E$
+^package\.json$
