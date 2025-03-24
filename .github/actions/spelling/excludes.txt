@@ -1,1 +1,5 @@
 ^package\.json$
+^\.github/$
+^app/$
+next.config.mjs
+mdx-components.js
