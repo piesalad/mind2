@@ -17,7 +17,7 @@ jobs:
       - name: Run Spell Check
         uses: check-spelling/check-spelling@v0.0.24
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           extra_dictionaries: |
             cspell:software-terms/dict/softwareTerms.txt
             cspell:node/dict/node.txt
