@@ -1,4 +1,0 @@
-Jolla Mind
-llm
-Media Markt
-^\Qpackage.json\E$
