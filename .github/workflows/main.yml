@@ -30,4 +30,4 @@ jobs:
             cspell:mnemonics/src/mnemonics.txt
             cspell:css/dict/css.txt
             cspell:typescript/dict/typescript.txt
-          ignore-pattern: "(https?://[^\s]+)"
+          ignore-pattern: "(https?://[^\\s]+)"
