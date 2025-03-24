@@ -22,6 +22,8 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           extra_dictionaries: |
+            cspell:en_GB/src/hunspell/en_GB.dic
+            cspell:en_US/src/hunspell/en_US.dic
             cspell:software-terms/dict/softwareTerms.txt
             cspell:node/dict/node.txt
             cspell:npm/dict/npm.txt
