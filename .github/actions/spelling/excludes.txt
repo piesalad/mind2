@@ -1,0 +1,1 @@
+^\Qpackage.json\E$
