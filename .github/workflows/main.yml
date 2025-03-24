@@ -5,7 +5,11 @@ on:
     branches:
       - main
   pull_request:
-
+  
+permissions:
+  contents: read
+  pull-requests: write
+  
 jobs:
   spell-check:
     runs-on: ubuntu-latest
