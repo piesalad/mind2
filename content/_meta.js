@@ -31,5 +31,9 @@ export default {
     github_link: {
         title: 'Jolla Mind 2 Official Documentation',
         href: 'https://github.com/venhoai/jolla-mind2'
+    },
+    discord_link: {
+        title: 'Official Jolla Mind 2 Discord',
+        href: 'https://discord.gg/CjGEnzWzGm'
     }
 }
