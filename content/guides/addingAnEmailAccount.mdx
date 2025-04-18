@@ -2,6 +2,7 @@
 title: Adding an email Account
 ---
 import { Callout } from 'nextra/components'
+import {Steps} from 'nextra/components'
 
 ## Adding an email Account to the Jolla Mind 2
 
@@ -9,15 +10,18 @@ import { Callout } from 'nextra/components'
     There are still some known issues take a look at them [here](https://github.com/venhoai/jolla-mind2/issues).
 </Callout>
 
-<callout>
+<Callout>
     Only SMTP & IMAP are supported at the moment.
-</callout>
-
->[!TIP]
->
->If you already have an email account setup, you can add another one via the filter options in the top right:
->**Filter -> add Account**
-- Open the `Messaging Center` in the web GUI.
-- Click on `"Setup new Inbox"`.
-- Enter your mail server configuration (check for the `IMAP` and `SMTP` fields what your email provider suggests).
-- Click on `Done` to finish the Setup of a new Mail Account.
+</Callout>
+<Steps>
+    ## Open the `Messaging Center` in the web GUI
+    ## Click on `"Add Account+"` in the top right corner
+    ## Configure it from the options
+    <Callout>
+        If you are using 2FA or an Passkey for your Mail Account you will need to use an `App Password` for this.
+    </Callout>
+    - `Link existing account` ?
+    - `New account` Select your email Provider from the Drop-down or set it up manually<br />
+    - `Set up manually` Enter your mail server configuration (check for the `IMAP` and `SMTP` fields what your email provider suggests).
+    ## Click on `Add` to finish the setup of a new Mail Account
+</Steps>
